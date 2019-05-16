@@ -1,8 +1,9 @@
 language: node_js
 node_js:
-- '8'
+  - '8'
+os: osx
 script:
-- npm run build:mac && npm run build:dmg
+  - npm run build:mac && npm run build:dmg
 deploy:
   provider: releases
   file:
