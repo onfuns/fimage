@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Icon } from 'antd'
+import React from 'react'
 
 const { shell } = nodeRequire('electron')
 import './fileArea.less'
