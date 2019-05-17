@@ -7,4 +7,3 @@ dist
 node_modules/
 typings/
 .npm
-.electron

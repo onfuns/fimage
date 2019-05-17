@@ -10,7 +10,7 @@ module.exports = {
   dev: {
     env: 'development',
     port: 8088,
-    output: '../.electron',
+    output: '../dist',
     devtool: 'inline-source-map',
     publicPath: './',
     proxy: {}

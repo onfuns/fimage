@@ -12,7 +12,7 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.fileStore = props.fileStore
-    this.fileTypes = ['.jpg', 'jpeg', 'png', 'svg', 'gif', 'webp']
+    this.fileTypes = ['.jpg', 'jpeg', 'png', 'svg', 'gif']
     this.state = {
       showDropArea: false
     }

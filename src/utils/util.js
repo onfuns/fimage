@@ -3,6 +3,7 @@ export const { remote } = electron
 export const { BrowserWindow } = remote
 const path = nodeRequire('path')
 const fs = nodeRequire('fs-extra')
+const os = nodeRequire('os')
 
 //格式化文件大小
 export const formatFileSize = (fsize, prec = 1) => {
@@ -75,7 +76,7 @@ export const isDir = path => {
   return fs.exists(path) && fs.statSync(path).isDirectory()
 }
 
-//生成文件目录
-export const getBuildPath = filePath => {
-  return path.join(path.dirname(filePath), 'build')
+export const getSeparator = () => {
+  const p = os.platform()
+  return p === 'darwin' || p === 'linux' ? '/' : '\\'
 }

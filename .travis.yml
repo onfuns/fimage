@@ -1,13 +1,20 @@
 language: node_js
 node_js:
   - '8'
-os: osx
+os: 
+  - osx
+  - windows
+branchs:
+  only:
+    - master
 script:
-  - npm run build:mac && npm run build:dmg
+  - npm run package
 deploy:
   provider: releases
   file:
   - "./package/fimage.dmg"
+  - "./package/fimage-win32-ia32"
+  - "./package/fimage-win64-x64"
   skip_cleanup: true
   overwrite: true
   on:

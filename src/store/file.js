@@ -1,7 +1,18 @@
 import { observable, action } from 'mobx'
 import { compressImg } from '../actions'
 const fs = nodeRequire('fs-extra')
-import { formatFileSize, getBuildPath } from '../utils/util'
+const path = nodeRequire('path')
+import { formatFileSize, getSeparator } from '../utils/util'
+
+export const getFileInfo = filePath => {
+  const fileName = filePath.substring(filePath.lastIndexOf(getSeparator()) + 1)
+  const buildDir = path.join(path.dirname(filePath), 'build')
+  return {
+    buildDir,
+    newPath: path.join(buildDir, getSeparator(), fileName),
+    fileName
+  }
+}
 
 class File {
   @observable files = []
@@ -13,7 +24,7 @@ class File {
     this.files.map((file, index) => {
       if (file.newsize) return file //过滤掉已压缩
       if (file.size < 100 * 1000) { //小于100kb不压缩
-        fs.copySync(file.path, getBuildPath(file.path) + '/' + file.name)
+        fs.copySync(file.path, getFileInfo(file.path).newPath)
         this.setFileInfo(index, {
           ...file,
           newSize: formatFileSize(file.size),
@@ -21,15 +32,11 @@ class File {
         })
         return
       }
-      compressImg(file.path)
+      compressImg(file.path, getFileInfo(file.path).buildDir)
         .then(data => {
-          let newSize = 0
-          if (data.length) {
-            newSize = formatFileSize(fs.statSync(data[0].path).size)
-          }
           this.setFileInfo(index, {
             ...file,
-            newSize,
+            newSize: data.length ? formatFileSize(fs.statSync(data[0].path).size) : 0,
             status: 'success'
           })
         })
@@ -46,12 +53,9 @@ class File {
 
   setFileInfo(index, file) {
     this.files[index] = {
-      path: file.path,
-      newSize: file.newSize,
-      name: file.name,
-      size: file.size,
-      newPath: getBuildPath(file.path) + '/' + file.name,
-      status: file.status
+      ...file,
+      name: getFileInfo(file.path).fileName,
+      newPath: getFileInfo(file.path).newPath,
     }
   }
 

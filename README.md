@@ -17,4 +17,12 @@ npm run electron
 
 ```
 npm run build:mac
+npm run build:win32
+npm run build:win64
+```
+
+### 打包 all
+
+```
+npm run build:package
 ```

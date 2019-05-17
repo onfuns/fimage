@@ -3,6 +3,7 @@ const path = require('path')
 const { app, Menu, BrowserWindow } = electron
 
 const IS_DEV = process.env.NODE_ENV == 'development'
+
 IS_DEV && require('electron-reload')(path.join(__dirname, 'dist'))
 
 /** 设置菜单*/
@@ -88,7 +89,7 @@ function createWindow() {
   })
   win.loadURL(
     IS_DEV
-      ? `file://${__dirname}/.electron/index.html`
+      ? `file://${__dirname}/dist/index.html`
       : `file://${__dirname}/index.html`
   )
   IS_DEV && win.webContents.openDevTools({ mode: 'bottom' })
