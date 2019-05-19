@@ -1,10 +1,10 @@
 # fimage
 
-![](https://raw.githubusercontent.com/onfuns/fimage/master/screenshots/1.png)
+<img src="https://raw.githubusercontent.com/onfuns/fimage/master/screenshots/1.png" width="350"/>
 
-![](https://raw.githubusercontent.com/onfuns/fimage/master/screenshots/2.png)
+<img src="https://raw.githubusercontent.com/onfuns/fimage/master/screenshots/2.png" width="350"/>
 
-![](https://raw.githubusercontent.com/onfuns/fimage/master/screenshots/3.png)
+<img src="https://raw.githubusercontent.com/onfuns/fimage/master/screenshots/3.png" width="350"/>
 
 ### 开发
 
