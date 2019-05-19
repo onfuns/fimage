@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - '8'
-os: 
+os:
   - osx
   - windows
 branchs:
@@ -12,9 +12,9 @@ script:
 deploy:
   provider: releases
   file:
-  - "./package/fimage.dmg"
-  - "./package/fimage-win32-ia32"
-  - "./package/fimage-win64-x64"
+    - './package/fimage.dmg'
+    - './package/fimage-win32-ia32'
+    - './package/fimage-win32-x64'
   skip_cleanup: true
   overwrite: true
   on:

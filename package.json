@@ -16,7 +16,7 @@
     "build:mac-dmg": "npm run build:mac-package && electron-installer-dmg ./package/fimage-darwin-x64 fimage --out=./package --icon=./assets/logo.icns --overwrite",
     "build:win32-package": "electron-packager ./package/dist fimage --out ./package --platform=win32 --arch=ia32 --icon=assets/logo.ico  --overwrite --no-prune",
     "build:win32": "npm run build && npm run build:win32-package",
-    "build:win64-package": "electron-packager ./package/dist fimage --out ./package --platform=win64 --arch=x64 --icon=assets/logo.ico  --overwrite --no-prune",
+    "build:win64-package": "electron-packager ./package/dist fimage --out ./package --platform=win32 --arch=x64 --icon=assets/logo.ico  --overwrite --no-prune",
     "build:win64": "npm run build && npm run build:win64-package",
     "package": "npm run build && npm run build:mac-dmg && npm run build:win32-package && npm run build:win64-package",
     "pretty": "prettier --write '{src,scripts}/**/*.{jsx,tsx,ts,js,json,css,html}'"
