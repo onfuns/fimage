@@ -7,10 +7,8 @@ environment:
   token:
     secure: Og2Iq8r0B401XDHsExtqkO78D4JaWWhWjSEilil5TvCD6KU3oruXB1wuAwad0ZzG
 deploy:
-    provider: GitHub
-    artifacts:
-      - path: package
-        name: fimage-win32-ia32 fimage-win32-x64
-    on:
-      branch: master
-      APPVEYOR_REPO_TAG: true
+  provider: GitHub
+  artifact: /fimage-win32-/
+  on:
+    branch: master
+    APPVEYOR_REPO_TAG: true
