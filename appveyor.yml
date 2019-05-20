@@ -5,6 +5,9 @@ environment:
     - nodejs_version: 10
 build_script :
   - npm run build:win
+environment:
+  token:
+    secure: Og2Iq8r0B401XDHsExtqkO78D4JaWWhWjSEilil5TvCD6KU3oruXB1wuAwad0ZzG
 deploy:
     provider: GitHub
     artifacts:
