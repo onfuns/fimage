@@ -6,11 +6,11 @@ build_script :
   - npm run build:win
 environment:
   nodejs_version: "10"
-  token:
-    secure: Og2Iq8r0B401XDHsExtqkO78D4JaWWhWjSEilil5TvCD6KU3oruXB1wuAwad0ZzG
 deploy:
   provider: GitHub
   artifact: /fimage-win32-/
+  auth_token:
+    secure: Og2Iq8r0B401XDHsExtqkO78D4JaWWhWjSEilil5TvCD6KU3oruXB1wuAwad0ZzG
   on:
     branch: master
     APPVEYOR_REPO_TAG: true
