@@ -1,0 +1,15 @@
+platform:
+  - x64
+environment:
+  matrix:
+    - nodejs_version: 10
+build_script :
+  - npm run build:win
+deploy:
+    provider: GitHub
+    artifacts:
+      - path: package
+        name: fimage-win32-ia32 fimage-win32-x64
+    on:
+      branch: master
+      APPVEYOR_REPO_TAG: true
