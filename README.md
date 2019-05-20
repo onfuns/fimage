@@ -18,7 +18,7 @@ npm run electron
 ### 编译
 
 ```
-npm run build:mac
+npm run build:mac-dmg
 npm run build:win32
 npm run build:win64
 ```

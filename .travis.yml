@@ -1,20 +1,21 @@
-language: node_js
-node_js:
-  - '8'
 os:
   - osx
   - windows
+language: node_js
+node_js:
+  - '8'
 branchs:
   only:
     - master
-script:
-  - npm run package
+script :
+  - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then npm run build:win; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run build:mac-dmg; fi
 deploy:
   provider: releases
   file:
-    - './package/fimage.dmg'
-    - './package/fimage-win32-ia32'
-    - './package/fimage-win32-x64'
+    - "./package/fimage.dmg"
+    - "./package/fimage-win32-ia32"
+    - "./package/fimage-win32-x64"
   skip_cleanup: true
   overwrite: true
   on:

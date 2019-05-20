@@ -1,6 +1,6 @@
 {
   "name": "fimage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "onfuns",
   "main": "./main.js",
   "description": "fimage by onfuns",
@@ -12,13 +12,12 @@
     "build-code-node-modules": "cd ./package/dist && npm i --production",
     "build": "npm-run-all build-code-*",
     "build:mac-package": "electron-packager ./package/dist fimage --out ./package --platform=darwin --arch=x64 --icon=assets/logo.icns --asar --overwrite --no-prune",
-    "build:mac": "npm run build && npm run build:mac-package",
-    "build:mac-dmg": "npm run build:mac-package && electron-installer-dmg ./package/fimage-darwin-x64 fimage --out=./package --icon=./assets/logo.icns --overwrite",
+    "build:mac-dmg": "npm run build && npm run build:mac-package && electron-installer-dmg ./package/fimage-darwin-x64 fimage --out=./package --icon=./assets/logo.icns --overwrite",
     "build:win32-package": "electron-packager ./package/dist fimage --out ./package --platform=win32 --arch=ia32 --icon=assets/logo.ico  --overwrite --no-prune",
     "build:win32": "npm run build && npm run build:win32-package",
     "build:win64-package": "electron-packager ./package/dist fimage --out ./package --platform=win32 --arch=x64 --icon=assets/logo.ico  --overwrite --no-prune",
     "build:win64": "npm run build && npm run build:win64-package",
-    "package": "npm run build && npm run build:mac-dmg && npm run build:win32-package && npm run build:win64-package",
+    "build:win": "npm run build && npm run build:win32-package && npm run build:win64-package",
     "pretty": "prettier --write '{src,scripts}/**/*.{jsx,tsx,ts,js,json,css,html}'"
   },
   "prettier": "@frontend-cli/prettier-config",
