@@ -1,20 +1,20 @@
 os:
-  - osx
+- osx
 language: node_js
 node_js:
-  - '10'
+- '10'
 branchs:
   only:
-    - master
-script :
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run build:mac-dmg; fi
+  - master
+script:
+- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run build:mac-dmg; fi
 deploy:
   provider: releases
   file:
-    - "./package/fimage.dmg"
+  - "./package/fimage.dmg"
   skip_cleanup: true
   overwrite: true
   api_key:
-    secure: if/NUSKowWD8UpSB32Jdq2OvN7wf8Hb4wCMDEuWKkeS0d7c9hu4jfSz3cJ+TafiXQX1Z1j1K7YcFiRMHfGHjyLV7o8FK3l/O8waMt5ZOkEnSjCpAQS01+KlcSO+PIotee0yMUOZ2B4wxU0Km2mXzbev7kpwObeQPReTN9krPFAg0ELA4LL/8YiWEEYP217OQOgHw6GqlagDKFr4z4/9GDJ5LrgzMyDQ5Eh6WKU/TmMqwZ1X19wPsPjIGZAcEGo74N+rvqmS0Nr7jNrhuaUkREtUHa2CEGE9WOYKpWyLX/VXxBfx7GSnpfWta0wwfPOow92xB9ixJh6nPYH+YFUE7HclFjd5tYesFlO9FOoon2RGK4X4AImS8sH2oglphfZSK05+zxKWVE2Wjxoux0FuwdmjfCSeGsmegkI7kWcZ1aG2gOwsYWWfuepkGdzWcthQCSLEtGSlWbKrS6vrr9j7qyH4vOFbweOGu5Mb55n/dt6MHuS/4Vp0hD/P41zzrCzPuEBBfrmhKDLRTKYkwBuKBqRYTJfZRXOad4WQNO+flysQAE9Fgfg8LZ8H4DPoD0qBw3QSlzn9V9BtvBtgMNgKd22k0IZ7GgarloK/Ut/XfDy25I5UL6czW8j0/Tuvbws5bmC+JhQg0FzxOCIr5eV/U0+M/bcQEuKJm9nuey9Uwzkg=
+    secure: zPTPjOSrHtJ+Uehm2gvvbfrNr7X9Be18BQyqx+KY7V3DkhCYYQw4BygJWyrnBCaz7Btlc4M/SW54QiClIvBspLJErYc+vEvIWlanzNRkm3Ih9ejZglg1QUvf+/xwl2FwAX7g517Bq4joRW7H1a0Wrpx9SpZB6XPrHaG5lYqgY3fR8L4CeGd3QiLMF1Ti9sVs2NmYY3sKJLOSlDKJQXuyUwFBI3fHzQhLh99rzqoLMIhyy7zZUjC5e78TBvy1JQLf5pZxpJPTvQ+E/++j5Nripc4DREoauPNkE9Idi567pjOrYkV4cpY/72Co/17+SqJ+j3H4yqaBeBHu0SjzBzHDQTUDFnuGwp8maA4j4l5BRDrqkT3pb2ZfxG8m8R2NMazeLkGTy6YBGK1DfMYyhqU+jAckHanGF8R5B0OGoIiL83m8TirNvYlb2Z66csVZeTJvHYx5aDQ73qF/6qAGNf58KcC0SxZzzk0b/aqHJYB2colV3BNRrinOeY9xgjagOGBdT/xsHYJhm0/+lpmMvpGxi67XDUsvNIdHnFZlLRLzgXD77Zet1kUnwoCprAvt036nySTksmgVwgODpkK+/+3FmnWRohi00wOo+9YUCXPjFRboilz27aVpdTkSOx5BWEMuf24crao37Fmf819NjV1HkV+HXMEicdR/Hof6gyR0Zfw=
   on:
     tags: true
