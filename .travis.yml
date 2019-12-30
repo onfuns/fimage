@@ -1,17 +1,17 @@
 os:
-- osx
+  - osx
 language: node_js
 node_js:
-- '10'
+  - '10'
 branchs:
   only:
-  - master
+    - master
 script:
-- if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run build:mac-dmg; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run package:mac; fi
 deploy:
   provider: releases
   file:
-  - "./package/fimage.dmg"
+    - './packages/Fimage.dmg'
   skip_cleanup: true
   overwrite: true
   api_key:

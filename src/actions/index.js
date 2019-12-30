@@ -9,11 +9,11 @@ export const compressImg = async (filePath, newPath) => {
   return imagemin([filePath], newPath, {
     plugins: [
       imageminGifsicle(),
-      imageminOptipng(),
-      imageminJpegoptim({ max: 70 }),
+      imageminOptipng({ optimizationLevel: 3 }),
+      imageminJpegoptim({ max: 40 }),
       imageminSvgo(),
       imageminPngquant({
-        quality: [0.6, 0.8]
+        quality: [0.3, 0.5]
       })
     ]
   })

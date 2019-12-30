@@ -2,13 +2,12 @@ platform:
   - x64
 install:
   - npm install
-build_script :
-  - npm run build:win
+build_script:
+  - npm run package:win
 environment:
-  nodejs_version: "10"
-artifacts :
-    - path: package\fimage-win32-ia32
-    - path: package\fimage-win32-x64
+  nodejs_version: '10'
+artifacts:
+  - path: packages\Fimage.exe
 deploy:
   provider: GitHub
   auth_token:

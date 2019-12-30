@@ -1,2 +1,5 @@
 dist
 package-lock.json
+main_process
+renderer_process
+packages
